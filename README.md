@@ -523,4 +523,53 @@ $$
 BW \approx 453.54MHz
 $$
 
+## With load Capacitor (CL = 1pF)
+
+<img width="1358" height="598" alt="image" src="https://github.com/user-attachments/assets/23640d47-d13a-4a06-8d4a-437adbcaf11c" />
+
+
+Midband Gain ≈20.538 dB  
+ 
+
+# GAIN BANDWIDTH PRODUCT (GBP)
+
+with capacitor
+
+GBP = Av × BW  
+
+GBP = 10.64 × 473.54 MHz  
+
+GBP ≈ 4852.6656 MHz  
+
+ 
+From simulation:
+- GBP ≈ 109 MHz  
+  
+
+Ideally, for a single dominant-pole system, the gain-bandwidth product (GBP) should equal the unity gain frequency. However, in a practical PMOS CS amplifier, a slight difference is observed.
+
+This difference arises because the amplifier is not an ideal single-pole system. The parasitic capacitances (Cgs, Cgd, Cdb) in the PMOS device, combined with the Miller effect, finite output resistance (ro), and other short-channel effects in 0.18 µm technology, introduce additional high-frequency poles.
+
+As a result, the frequency response deviates slightly from the ideal single-pole behavior, causing the unity gain frequency to be slightly lower than the calculated GBP.
+
+This variation is small and is expected in practical CMOS PMOS amplifier designs, particularly when operating at high frequencies or in scaled technologies.
+
+---
+
+# CONCLUSION
+
+The Common Source PMOS amplifier was successfully designed under the given power constraint.
+
+- Proper DC biasing achieved  
+- Gain ≈ 10 V/V (20.538 dB)  
+- Bandwidth ≈ 100GHz without capacitor
+   with capacitor
+- Bandwidth ≈ 473.54MHz
+- GBP ≈ 4852.66 MHz  
+
+The theoretical and simulated results are reasonably close, validating the design.
+
+---
+# Inference
+The Common Source PMOS amplifier was successfully designed and analyzed using TSMC 180 nm technology under the given power constraint. The transistor was properly biased in the saturation region with a drain current of 500 µA and power dissipation of 1 mW. The simulated voltage gain was 10 V/V (20.538dB), which is close to the theoretical value. The bandwidth with 1 pF load capacitance was found to be 473.54 MHz. The results validate proper amplifier operation considering practical non-ideal effects.
 
