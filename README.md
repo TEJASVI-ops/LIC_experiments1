@@ -92,6 +92,152 @@ Negative sign indicates phase inversion.
 ## Circuit Diagram
 <img width="996" height="537" alt="image" src="https://github.com/user-attachments/assets/fd0a35be-1e7c-4f7f-a2ed-3af930c4ea62" />
 
+# DESIGN CALCULATIONS
+
+For maximum symmetrical swing:
+
+$V_{out}$ = $V_{DD}$ / 2  
+$V_{out}$ = 2 / 2 = 1V  
+
+Power constraint:
+
+P = $V_{DD}$× $I_D$  
+1.5mW ≥ 1.5 × $I_D$  
+$I_D$ ≤ 0.75mA  
+
+##  Selection of Drain Current and Saturation Verification
+
+To satisfy the power constraint (P ≤ 1.5 mW), the drain current must be limited.
+Maximum allowable current:
+$I_D$ ≤ 0.75 mA
+Chosen design value:
+$I_D$ = 500 µA
+
+---
+
+### Threshold Voltage
+
+From the TSMC 0.18 µm model parameters:
+$V_{th}$ = 0.39 V (from datasheet)
+
+---
+
+### Saturation Condition
+
+For an PMOS transistor to operate in saturation:
+
+$V_{SD}$ ≥ $V_{SG}$ − $V_{th}$
+Rearranging:
+
+$V_{SG}$ ≤ $V_{SD}$ + $V_{th}$
+
+In this design:
+$V_{SD}$ = Vout = 1 V
+
+Substituting:
+Assume  $V_{ov}$ =0.2V
+
+
+$V_{ov}$ = $V_{SG}$ - $V_{th}$
+
+
+$V_{SG}$≤ 1.409 V
+
+The transistor operates in the saturation region.
+
+### Conclusion
+
+The selected drain current and gate bias ensure proper saturation operation, making the circuit suitable for linear amplification.
+
+---
+
+Drain resistor:
+
+$$
+R_D = \frac{V_{out}}{I_D}
+$$
+
+$$
+R_D = \frac{1V}{0.5mA}
+$$
+
+$$
+R_D = 2k
+$$
+
+
+##  Calculation of Process Parameter of (kn) and Transistor Width
+
+The process transconductance parameter is given by:
+
+kn = μn Cox
+
+Where:
+
+μn = 115.689 × 10⁻⁴  
+εox = 3.45 × 10⁻¹¹  
+tox = 4.1 × 10⁻⁹  
+
+Since:
+
+Cox = εox / tox
+
+Cox = (3.45 × 10⁻¹¹) / (4.1 × 10⁻⁹)
+
+Therefore,
+
+kn = 0.973 × 10⁻⁴ A/V²
+
+---
+
+### Width Calculation
+
+Using the MOSFET saturation current equation:
+
+$$
+I_D = \frac{1}{2} k_p (V_{ov})^2
+$$
+(neglecting  channel length modulation)
+
+Substituting:
+
+$I_D$  = 500 × 10⁻⁶ A  
+L = 560 nm  
+$V_{SG}$ = 0.9 V  
+$V_{th}$ = 0.39 V  
+
+
+Rearranging to find W:
+
+W = [2 × $I_D$ × L] / [kn × ( $V_{ov}$)²]
+
+W = (2 × 500 × 10⁻⁶ × 560 × 10⁻⁹) / (0.973× 10⁻⁴ × (0.2)²)
+
+After calculation:
+
+W = 144 µm
+
+---
+
+The calculated transistor width required to obtain ID = 500 µA is:
+
+W = 333.5 µm
+
+## Practical Width Adjustment in LTspice
+
+From theoretical calculations:
+
+W = 144 µm  
+for $I_D$ = 500 µA
+
+However, when simulated in LTspice using:
+
+W =333.5 µm
+
+The obtained drain current was:
+
+$I_D$ ≈ 500.0043µA
+
 
 
 
