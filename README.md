@@ -35,7 +35,7 @@ The required conditions are:
 1. $V_{SG} \geq V_{th}$  
    → To turn the transistor ON  
 
-2. $V_{SD} > V_{GS} - V_{th}$  
+2. $V_{SD} > V_{SG} - V_{th}$  
    → To keep the transistor in saturation  
 
 3. The input signal $v_{in}$ must be small  
