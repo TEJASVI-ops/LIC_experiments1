@@ -359,13 +359,9 @@ Both transistors operate in the **saturation region**, ensuring proper amplifier
 
 ## 2.2 DC Currents (Simulation)
 
-| Parameter | Value | Unit |
-|-----------|--------|------|
-| **Id (M1)** | **0.000297364** | A |
-| **Id (M2)** | **−0.000297364** | A |
-| I(R1) | 0.000297364 | A |
-| Is (M1) | −0.000297364 | A |
-| Is (M2) | 0.000297364 | A |
+<img width="1174" height="604" alt="image" src="https://github.com/user-attachments/assets/88c17619-c4f7-4404-9446-c70833ff96d9" />
+
+
 
 ---
 
@@ -374,7 +370,7 @@ Both transistors operate in the **saturation region**, ensuring proper amplifier
 ### Drain Current
 
 ```
-ID (theoretical) = 300 µA
+ID (theoretical) = 500 µA
 ```
 
 ---
@@ -386,7 +382,7 @@ Vrs = ID × RS
 ```
 
 ```
-Vrs = (300 µA)(666.67 Ω)
+Vrs = (500 µA)(400 Ω)
 ```
 
 ```
@@ -402,15 +398,15 @@ Vout = VDD / 2 + 0.2
 ```
 
 ```
-Vout = 1.5 / 2 + 0.2
+Vout = 2 / 2 + 0.2
 ```
 
 ```
-Vout = 0.75 + 0.2
+Vout =1+ 0.2
 ```
 
 ```
-Vout = 0.95 V
+Vout = 1.2 V
 ```
 
 
@@ -427,183 +423,40 @@ The practical (simulation) results closely agree with the theoretical calculatio
 
 # 3. Transient Analysis
 
-![Transient Analysis](https://github.com/user-attachments/assets/0fdb1235-34b4-4f74-aaa7-8c059e63c987)
-
----
-
 ## 3.1 Input Signal
+<img width="1361" height="624" alt="image" src="https://github.com/user-attachments/assets/c9dc2c92-2134-4ac9-a930-ac4dc8cecba5" />
+### Measured Input Values
 
-```
-Vin(t) = 0.81 + 10 mV sin(2π · 1 kHz · t)
-```
-
-```
-VDC = 0.81 V
-```
-
-```
-Vm = 10 mV
-```
-
-```
-f = 1 kHz
-```
+| Parameter | Value | Unit |
+|------------|--------|------|
+| DC Offset | 0.81 | V |
+| Peak Voltage |819.95856|mV|
+| Minimum Voltage | 800.0554 | mV |
+| Input Amplitude | 20 | mV |
+| Frequency | 1 | kHz |
 
 ---
+
+---
+
+
+
+
 
 ## 3.2 Output Voltage
 
-```
-Vout(t) = VOUT,DC + vout(t)
-```
+v<img width="1361" height="607" alt="image" src="https://github.com/user-attachments/assets/ffff7cda-fc0d-4d16-8679-bc0f8b0a9e1e" />
 
-```
-VOUT,DC ≈ 0.970546 V
-```
+| Parameter | Value | Unit |
+|------------|--------|------|
+| DC Offset | 0.81 | V |
+| Peak Voltage |819.95856|mV|
+| Minimum Voltage |1.454123 | V |
+| Input Amplitude | 535.9877 | mV |
+| Frequency | 1 | kHz |
 
-```
-vout(t) = Av · 10 mV · sin(2π · 1 kHz · t)
-```
 
----
 
-## 3.3 Source Voltage
-
-```
-Vrs(t) = 0.198243 + vrs(t)
-```
-
----
-
-## 3.4 Drain Current
-
-```
-ID(t) = 297.364 µA + id(t)
-```
-
-```
-id(t) = gm · 10 mV · sin(2π · 1 kHz · t)
-```
-
----
-
-# 4. Transient Analysis – Output Voltage Waveform
-
-![Output Waveform](https://github.com/user-attachments/assets/e9635040-8da1-4b96-8b2d-e510618b801b)
-
----
-
-## 4.1 Observed Output Waveform
-
-```
-VOUT,DC ≈ 0.970546 V
-```
-
----
-
-## 4.2 Peak and Minimum Values
-
-```
-Vout,max ≈ 1.06 V
-Vout,min ≈ 0.86 V
-```
-
----
-
-## 4.3 Peak-to-Peak Voltage
-
-```
-Vout,pp = Vout,max − Vout,min
-```
-
-```
-Vout,pp = 1.06 − 0.86 = 0.20 V
-```
-
-```
-Vout,peak = Vout,pp / 2 = 0.10 V
-```
-
----
-
-## 4.4 Frequency Verification
-
-```
-T ≈ 1 ms
-```
-
-```
-f = 1 / T = 1 / 1 ms = 1 kHz
-```
-
----
-
-## 4.5 Output Voltage Expression
-
-```
-Vout(t) ≈ 0.970546 + 0.10 sin(2π × 1 kHz × t)
-```
-
----
-
-# 4.6 Transient Analysis – Input Voltage Waveform
-
-![Input Waveform](https://github.com/user-attachments/assets/4a7af064-eed5-4e2f-8b2a-66d9c2ed31b3)
-
----
-
-## 4.6.1 Observed Input Waveform
-
-```
-VIN,DC ≈ 0.81 V
-```
-
----
-
-## 4.6.2 Peak and Minimum Values
-
-```
-Vin,max ≈ 0.82 V
-Vin,min ≈ 0.80 V
-```
-
----
-
-## 4.6.3 Peak-to-Peak Voltage
-
-```
-Vin,pp = Vin,max − Vin,min
-```
-
-```
-Vin,pp = 0.82 − 0.80 = 0.02 V
-```
-
-```
-Vin,peak = Vin,pp / 2 = 0.01 V = 10 mV
-```
-
----
-
-## 4.6.4 Frequency Verification
-
-```
-T ≈ 1 ms
-```
-
-```
-f = 1 / T = 1 / 1 ms = 1 kHz
-```
-
----
-
-## 4.6.5 Input Voltage Expression
-
-```
-Vin(t) ≈ 0.81 + 0.01 sin(2π × 1 kHz × t)
-```
-
----
 
 # 5. Theoretical Voltage Gain Calculation
 
@@ -638,151 +491,90 @@ gm = 2.4 mS
 
 ---
 
-## 5.2 Output Resistance (ro)
+## 5.2 Gain calculations 
+Voltage gain:
 
-```
-ro = 1 / (λ Id)
-```
+$$
+A_v = \frac{V_{out(pp)}}{V_{in(pp)}}
+$$
 
-```
-ro ≈ 33,333 Ω
-```
+$$
+A_v = \frac{535.9877}{20}
+$$
 
-```
-ro ≈ 33.3 kΩ
-```
+$$
+A_v \approx 26.79
+$$
 
----
+Since the Common Source amplifier produces phase inversion:
 
-## 5.3 Effective Output Resistance
+$$
+A_v \approx -26.79
+$$
 
-```
-ro,eff = ro / 2
-```
 
-```
-ro,eff ≈ 16,667 Ω
-```
 
-```
-ro,eff ≈ 16.7 kΩ
-```
 
----
 
-## 5.4 Gain Without Source Degeneration
 
-```
-Av = gm × ro,eff
-```
+### AC Analysis
+<img width="1362" height="601" alt="image" src="https://github.com/user-attachments/assets/3d239ff1-1fce-4129-a257-5fd07bc8f0d9" />
 
-```
-Av ≈ 40
-```
 
-```
-Av,dB ≈ 32 dB
-```
+## Gain Conversion to Decibels (dB)
 
----
+Given voltage gain:
 
-## 5.5 Gain With Source Degeneration
+Av = 26.79
 
-```
-Av = − gm ro,eff / (1 + gm Rs)
-```
+The formula to convert voltage gain to decibels (dB) is:
 
-```
-gm ro,eff ≈ 40
-```
+Gain (dB) = 20 log10(Av)
 
-```
-gm Rs ≈ 1.6
-```
+Substituting the value:
 
-```
-Av ≈ −15.38
-```
+Gain (dB) = 20 log10(26.79)
 
-```
-|Av| ≈ 15.38
-```
+= 20 × 1.428
 
-```
-Av,dB ≈ 23.7 dB
-```
+= 28.56 dB
 
----
+## Final Answer:
 
-### Final Comparison
+Voltage Gain = 28.56 dB
 
-```
-Gain without Rs ≈ 40 (32 dB)
-Gain with Rs ≈ 15.38 (23.7 dB)
-Practical Gain ≈ 10 (20 dB)
-```
 
----
 
-# 7. AC Analysis
 
-![AC Analysis](https://github.com/user-attachments/assets/a1c8e12c-4be3-43de-b52f-e0b82adc940c)
 
-AC command:
+### Midband Gain
+<img width="1362" height="628" alt="image" src="https://github.com/user-attachments/assets/898a1e57-ea7f-4080-a723-9e26903dfae7" />
 
-```
-.ac dec 100 100 100G
-```
 
----
+$$
+A_v \approx 28.56\,dB
+$$
 
-![AC Frequency Response](https://github.com/user-attachments/assets/6a0ebec4-a6bb-4c4e-a79b-27777815278c)
+### Half-Power (-3 dB) Frequency
 
----
+$$
+28.56 - 3 = 25.56\,dB
+$$
 
-## 7.1 Midband Gain
+From the graph, gain reaches 2.4 dB at approximately:
 
-```
-Av ≈ 15.38
-```
+$$
+f_H \approx 33.8844\,GHz
+$$
 
-```
-Av,dB ≈ 20.7 dB
-```
+### Bandwidth
 
----
+Since no low-frequency cutoff is observed:
 
-## 7.2 Frequency Response
+$$
+BW = f_H
+$$
 
-### Low Frequency Region
-
-- Gain ≈ constant  
-- Phase ≈ 180°
-
-### High Frequency Region
-
-- Gain decreases due to **Cgs, Cgd, Cdb**
-
----
-
-![Bandwidth Graph](https://github.com/user-attachments/assets/ffd7f58b-6cf0-4cfb-9971-661229e47ad3)
-
----
-
-## 7.3 Bandwidth
-
-```
-Midband gain = 20.7 dB
-```
-
-```
-Cutoff gain = 20.7 − 3
-```
-
-```
-Cutoff gain ≈ 17.7 dB
-```
-
-```
-Bandwidth = fH − fL
-```
+$$
+BW \approx 33.8844\,GHz
+$$
