@@ -49,29 +49,31 @@ Therefore the widths were slightly adjusted in simulation until the desired oper
 
 ---
 
+| Parameter | Value | Unit |
+|------------|--------|------|
+| DC Offset | 0.81 | V |
+| Peak Voltage |819.95856|mV|
+| Minimum Voltage | 800.0554 | mV |
+| Input Amplitude | 20 | mV |
+| Frequency | 1 | kHz |
+
+
 ### Output Waveform
 
 <img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/b2b8bdb5-ff93-4e68-af60-e7f610b83a95" />
 
 
 ---
-### Input & Output Comparison
 
-<img width="1919" height="854" alt="2bt_combined" src="https://github.com/user-attachments/assets/d4b035b5-e7f6-4096-8a32-4558cf469a95" />
+| Parameter | Value | Unit |
+|------------|--------|------|
+| DC Offset | 0.81 | V |
+| Peak Voltage |819.95856|mV|
+| Minimum Voltage | 800.0554 | mV |
+| Input Amplitude | 20 | mV |
+| Frequency | 1 | kHz |
 
----
-## Practical Gain Calculation
 
-| Vin(p-p) | Vout(p-p) | Gain (Av) | Gain (dB) |
-|----------|-----------|-----------|-----------|
-| 0.925 − 0.906 = **0.019 V** | 1.225 − 1.183 = **0.042 V** | 0.042 / 0.019 = **2.21 V/V** | **6.88 dB** |
-
----
-### Observation
-
-The output signal is inverted relative to the input and shows clear voltage amplification, confirming correct operation of the cascode amplifier.
-
------
 # AC Analysis – Circuit 2B
 
 Small-signal AC analysis was performed to determine the frequency response and gain characteristics of the cascode amplifier.
