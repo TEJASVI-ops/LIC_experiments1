@@ -77,17 +77,18 @@ Small-signal AC analysis was performed to determine the frequency response and g
 | `.ac dec 1000 .1 1G` | 1 V |
 
 ---
-<img width="1915" height="848" alt="2bac_gain" src="https://github.com/user-attachments/assets/eb71ebf0-3b06-49f0-aa7c-752a2d80bcfd" />
+<img width="1905" height="886" alt="image" src="https://github.com/user-attachments/assets/59ecc523-dea2-4a4e-9e75-a47fe2fc5fd7" />
+
 
 ---
 ## Gain and Frequency Characteristics – Circuit 2B
 
 | Parameter | Calculation | Result |
 |-----------|-------------|--------|
-| Midband Gain | From AC plot | **6.94 dB (≈ 2.22 V/V)** |
-| −3 dB Bandwidth | From AC plot | **48.417 MHz** |
-| Gain Bandwidth Product (GBW) | 2.22 × 48.417 MHz | **≈ 107.48 MHz** |
-| Unity Gain Bandwidth (UGB) | Frequency at 0 dB | **=90.782 MHz** |
+| Midband Gain | From AC plot | **27 dB (≈ 22.392 V/V)** |
+| −3 dB Bandwidth | From AC plot | **79.432823MHz MHz** |
+| Gain Bandwidth Product (GBW) | 22.39×79.432 | **≈ 107.48 MHz** |
+| Unity Gain Bandwidth (UGB) | Frequency at 0 dB | **=3.1622777GHz** |
 
 -----
 # Theoretical Gain – Circuit 2B
@@ -100,7 +101,7 @@ Given
 |-----------|------|
 | ID | 200 µA |
 | Vov | 0.20 V |
-| gm | 1.6 mS |
+
 
 Output resistance
 
