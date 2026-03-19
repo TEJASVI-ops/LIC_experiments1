@@ -194,9 +194,7 @@ kn = 0.973 × 10⁻⁴ A/V²
 
 Using the MOSFET saturation current equation:
 
-$$
-I_D = \frac{1}{2} k_p (V_{ov})^2
-$$
+$I_D = \frac{1}{2} k_p (V_{ov})^2$
 (neglecting  channel length modulation)
 
 Substituting:
