@@ -251,7 +251,7 @@ It calculates the steady-state values of $I_D$, $V_{SG}$, and $V_{SD}$ to ensure
 | Supply Voltage | VDD | 2 | V |
 | Input Voltage | Vin | 1.409 | V |
 | Output Voltage | Vout | 1| V |
-| Drain Current | ID |500 | mA |
+| Drain Current | ID |0.5 | mA |
 | Current through RD | I(RD) | 0.5 | mA |
 | Supply Current | I(VDD) | 0.5 | mA |
 
