@@ -319,7 +319,8 @@ $V_{id} = 40\ \mathrm{mV} < 0.42\ \mathrm{V}$
 - Outputs are equal in magnitude and opposite in phase  
 - Circuit operates in linear region
 
-  <img width="900" height="546" alt="image" src="https://github.com/user-attachments/assets/f2485194-a117-4fc1-8251-6c4af95dd206" />
+ <img width="1363" height="589" alt="image" src="https://github.com/user-attachments/assets/80b49f02-152d-45f3-9290-c3bb52739336" />
+
 
 
 # (b) Case 2: $V_{id} > \sqrt{2} V_{ov}$
