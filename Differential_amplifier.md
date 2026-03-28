@@ -363,7 +363,8 @@ In AC analysis, the frequency response of the differential amplifier is observed
 The midband gain is obtained from the flat region of the Bode plot.  
 The bandwidth is defined as the range between the lower cutoff frequency ($f_{L}$) and upper cutoff frequency ($f_{H}$), measured at the −3 dB points.
 
-![Image description](https://github.com/praphul-biradar/LIC-LAB/blob/main/Screenshot%202026-03-27%20164251.png)
+<img width="1348" height="317" alt="image" src="https://github.com/user-attachments/assets/75941fa2-dd93-4704-96b0-017a77c32fdd" />
+
 
 # Midband Gain
 
@@ -434,6 +435,8 @@ Upper cutoff frequency (from graph):
 $f_{H} \approx 316.2\ \mathrm{MHz}$
 
 # Bandwidth
+<img width="1353" height="670" alt="image" src="https://github.com/user-attachments/assets/a63bca24-9917-42f8-a3e1-6480fb00cb64" />
+
 
 $BW = f_{H} - f_{L} \approx 316.2\ \mathrm{MHz}$
 
