@@ -245,7 +245,7 @@ $W \approx 37\ \mathrm{\mu m}$
 
 
 
-# 🔹 5. Input Common Mode Range (ICMR)
+#  5. Input Common Mode Range (ICMR)
 
 Minimum value:
 
@@ -286,7 +286,7 @@ Transient analysis is performed to observe the linear behavior of the differenti
 
 A load capacitor is connected at the output:
 
-C_L = 10 pF  
+$C_L$ = 10 pF  
 
 
 ![Image description](https://github.com/praphul-biradar/LIC-LAB/blob/main/Screenshot%202026-03-27%20164439.png)
@@ -319,6 +319,9 @@ $V_{id} = 40\ \mathrm{mV} < 0.42\ \mathrm{V}$
 - Outputs are equal in magnitude and opposite in phase  
 - Circuit operates in linear region
 
+  <img width="900" height="546" alt="image" src="https://github.com/user-attachments/assets/f2485194-a117-4fc1-8251-6c4af95dd206" />
+
+
 # (b) Case 2: $V_{id} > \sqrt{2} V_{ov}$
 
 Set a large differential input:
@@ -339,6 +342,9 @@ $V_{id} = 600\ \mathrm{mV} > 0.42\ \mathrm{V}$
 - Other transistor approaches cutoff  
 - Nonlinear behavior is observed
 
+  <img width="1353" height="584" alt="image" src="https://github.com/user-attachments/assets/487c5a11-f85e-4dcf-ad51-8082f8347060" />
+
+
 # (c) Comparison and Interpretation
 
 | Condition         | Input Level   | Output Behavior     | Operation   |
@@ -350,7 +356,7 @@ $V_{id} = 600\ \mathrm{mV} > 0.42\ \mathrm{V}$
 
 The differential amplifier operates linearly only for small input signals. When the input exceeds the limit $\sqrt{2} \times V_{ov}$, the circuit enters nonlinear region and distortion occurs.
 
-# 🔷 1.4 AC Analysis
+# 1.4 AC Analysis
 
 In AC analysis, the frequency response of the differential amplifier is observed.  
 The midband gain is obtained from the flat region of the Bode plot.  
