@@ -1,4 +1,227 @@
-# Condition for Linear Operation
+
+## Circuit 2
+
+
+## Differential Amplifier (Active Load) – Analysis
+
+
+
+##  Aim
+
+To design and analyze a MOS differential amplifier with active load, determine its DC operating point, and evaluate its performance in terms of gain, linearity, and frequency response using LTspice.
+
+
+
+# Introduction
+
+A differential amplifier amplifies the difference between two input signals while rejecting common-mode signals. In this circuit, an active load (current mirror) is used instead of resistors, which increases gain and improves performance.
+
+
+
+# Circuit Description
+
+The circuit consists of:
+
+- M1, M2 → NMOS differential pair  
+- M3, M4 → PMOS current mirror (active load)  
+- M5 → Tail current source  
+
+
+![Image description](https://github.com/praphul-biradar/LIC-LAB/blob/main/Screenshot%202026-03-28%20172015.png)
+
+
+# Given Parameters
+
+
+
+$V_{DD} = 0.9\ \mathrm{V}$  
+$V_{SS} = -0.9\ \mathrm{V}$  
+$P = 2.2\ \mathrm{mW}$  
+$V_{T} \approx 0.4\ \mathrm{V}$  
+$V_{ov} \approx 0.39\ \mathrm{V}$  
+$L = 540\ \mathrm{nm}$
+
+
+# Design Calculations
+
+## Tail Current
+
+$I_{SS} = \dfrac{P}{V_{DD} - V_{SS}}$  
+
+$I_{SS} = \dfrac{2.2\ \mathrm{mW}}{1.8\ \mathrm{V}}$  
+
+$I_{SS} \approx 1.22\ \mathrm{mA}$  
+
+
+## Branch Current
+
+$I_{D} = \dfrac{I_{SS}}{2}$  
+
+$I_{D} \approx 0.61\ \mathrm{mA}$  
+
+
+## Bias Voltage
+
+$V_{GS} = V_{T} + V_{ov}$  
+
+$V_{GS} = 0.34 + 0.3 = 0.64\ \mathrm{V}$  
+
+$V_{B} = V_{S} + V_{GS}$  
+
+$V_{B} = -0.9 + 0.64$  
+
+$V_{B} \approx -0.26\ \mathrm{V}$
+
+
+
+## DC Analysis (Simulation)
+
+
+![Image description](https://github.com/praphul-biradar/LIC-LAB/blob/main/Screenshot%202026-03-28%20172139.png)
+
+
+## 🔹 Results
+
+# Calculated Values
+
+$I_{SS} \approx 1.23\ \mathrm{mA}$  
+
+$I_{D1} = I_{D2} \approx 0.615\ \mathrm{mA}$  
+
+$V_{p} \approx -0.724\ \mathrm{V}$  
+
+$V_{out1} \approx V_{out2} \approx -0.055\ \mathrm{V}$
+
+#  Input Common Mode Range (ICMR)
+
+The input common-mode range is defined as the range of input voltage for which all transistors remain in saturation.
+
+
+
+# Minimum Input Common Mode Voltage
+
+Condition:
+
+Input NMOS must remain ON:
+
+# Minimum Input Common Mode Voltage
+
+$V_{GS} \geq V_{T}$  
+
+Using:
+
+$V_{GS} = V_{ICM} - V_{S}$  
+
+So,
+
+$V_{ICM(min)} = V_{S} + V_{T}$  
+
+Now,
+
+$V_{S} = V_{SS} + V_{ov}$  
+
+$V_{S} = -0.9 + 0.3 = -0.6\ \mathrm{V}$  
+
+Therefore:
+
+$V_{ICM(min)} = -0.6 + 0.4$  
+
+$V_{ICM(min)} = -0.2\ \mathrm{V}$
+
+# Maximum Input Common Mode Voltage
+
+Condition:
+
+Input NMOS must remain in saturation:
+
+# Maximum Input Common Mode Voltage
+
+$V_{DS} \geq V_{ov}$  
+
+Using:
+
+$V_{D} \approx V_{DD} - V_{ov}$  
+
+$V_{D} = 0.9 - 0.3 = 0.6\ \mathrm{V}$  
+
+Now,
+
+$V_{ICM(max)} = V_{D} - V_{ov}$  
+
+$V_{ICM(max)} = 0.6 - 0.3$  
+
+$V_{ICM(max)} = 0.3\ \mathrm{V}$  
+
+
+# Final Input Common Mode Range
+
+$-0.2\ \mathrm{V} \leq V_{ICM} \leq 0.3\ \mathrm{V}$
+
+
+# Differential Input Voltage Range (Linear Region)
+
+For linear operation:
+
+V_id < √2 × V_ov  
+
+V_id < 1.414 × 0.3  
+
+V_id < 0.42 V  
+
+
+
+# Conclusion
+
+- ICMR: -0.2 V to 0.3 V  
+- Linear region condition: V_id < 0.42 V  
+
+
+# ifferential Input Voltage Range (Linear Region)
+
+The differential amplifier operates in the linear region only when both transistors (M1 and M2) remain in saturation.
+
+ 
+
+#  Condition for Linear Operation
+
+For MOS differential pair:
+
+$V_{id} < \sqrt{2} \times V_{ov}$
+
+ 
+# Given
+
+$V_{ov} = 0.39\ \mathrm{V}$  
+
+
+# 🔹 Calculation
+
+$V_{id(max)} = \sqrt{2} \times V_{ov}$  
+
+$V_{id(max)} = 1.414 \times 0.3$  
+
+$V_{id(max)} \approx 0.42\ \mathrm{V}$  
+
+
+# Final Range
+
+$-0.42\ \mathrm{V} \leq V_{id} \leq 0.42\ \mathrm{V}$  
+
+
+# Conclusion
+
+For $|V_{id}| < 0.42\ \mathrm{V}$ → circuit behaves as linear amplifier  
+
+For $|V_{id}| > 0.42\ \mathrm{V}$ → one transistor turns OFF → nonlinear behavior occurs
+
+
+# Step 2: Transient Analysis and Linearity Observation
+
+Transient analysis is performed to observe the linear behavior of the differential amplifier with active load.
+
+Load capacitor:
+
+$C_{L}$ = 10 pF  # Condition for Linear Operation
 
 For linear operation:
 
